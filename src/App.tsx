@@ -9,7 +9,7 @@ export type TaskType = {
 function App() {
     // Array<TaskType> === TaskType[]
     const tasks1:Array<TaskType> = [
-        { id: 1, title: 'Над пропастью во ржи', isDone: false },
+        { id: 1, title: 'Над пропастью во ржи', isDone: true },
         { id: 2, title: 'Мы', isDone: true },
         { id: 3, title: 'Анна Каренина', isDone: true },
         { id: 4, title: 'Преступление и наказание', isDone: true },

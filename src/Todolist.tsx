@@ -6,33 +6,35 @@ type TodolistProps = {
     title: string
 }
 
-export const Todolist = (props: TodolistProps) => {
+export const Todolist = ({title, tasks}: TodolistProps) => {
     return (
         <div>
-            <h3>{props.title}</h3>
+            <h3>{title}</h3>
             <div>
                 <input/>
-                <button>+</button>
+                <Button title={'+'}/>
             </div>
             {
-                props.tasks.length === 0
+                tasks.length === 0
                     ? <p>No tasks</p>
                     : <ul>
-                        {props.tasks.map((task) => {
+                        {tasks.map((task) => {
                             return (
                                 <li key={task.id}>
                                     <input type="checkbox" checked={task.isDone}/>
                                     <span>{task.title}</span>
+                                    <Button title={'x'}/>
                                 </li>
                             )
                         })}
                     </ul>
             }
             <div className='actionButtons'>
-                <Button/>
-                <Button/>
-                <Button title={'3'} onClick={() => removeTask(task.id)}/>
-
+               <Button title={'All'}/> {/*<button>All</button>*/}
+               <Button title={'Active'}/> {/*<button>All</button>*/}
+               <Button title={'Completed'}/> {/*<button>All</button>*/}
+                {/*<button>Active</button>*/}
+                {/*<button>Completed</button>*/}
             </div>
         </div>
     );
